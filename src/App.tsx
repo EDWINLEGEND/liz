@@ -31,12 +31,12 @@ const memories = [
 
 // Sample letters - replace with actual messages
 const letters = [
-  { id: 1, from: 'Ant', message: "Happy birthday, mate! Here's to another year of magical adventures!" },
+  { id: 1, from: 'Ant', message: "Happy birthday lisa . I remember that we met unexpectedly at a canteen dinner through other people and now you are one of the most valuable people in my college life . I guess that's how it is , most unexpected people turn out to be close ones in a point of your life , that's how you are for me and I would love and hope to keep it that way always even though I know we aren't that close but hope to be. Once again happy birthday. PS : this is my first time writing a birthday letter so adjust" },
   { id: 2, from: 'San', message: "Wishing you a birthday filled with all the magic and wonder you bring to our lives!" },
   { id: 3, from: 'Uthu', message: "Happy birthday! Hope yer day is as special as you are!" },
-  { id: 4, from: 'Gau', message: "Another year older, another year wiser. May your birthday be filled with the magic of love and friendship." },
-  { id: 5, from: 'Air', message: "She hasnt replied yet ! '_' ", isHidden: true },
-  { id: 5, from: 'Ed', message: "You'll always be the chosen one to me. Happy birthday!", isHidden: true },
+  { id: 4, from: 'Gau', message: "Happieeeeee Booooooorthadayy to you Leeeeeeesaaaaaah! WHEEEEEEEEEEEE" },
+  { id: 6, from: 'Air', message: "Happy Birthday lisa my partner in weirdness. You make my life 100 times more fun when ur around .I really hope u stay this chaotic ,weird ,creature like ,nd just YOU. Cuz normal is boring . Really happy to hv a frnd like you who laughs at the most dumbest things with me nd make me feel involved in madness."  },
+  { id: 5, from: 'Ed', message: "You'll always be the chosen one to me. Happy birthday!",isHidden: true },
 ];
 
 // Sample signatures for footer
