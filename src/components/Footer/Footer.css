@@ -1,0 +1,135 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.signatures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.signature {
+  color: #D4AF37;
+  font-size: 1rem;
+  font-style: italic;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.signature:hover {
+  color: #FFD800;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.hidden-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.hidden-button:hover {
+  opacity: 1;
+}
+
+.hidden-icon {
+  font-size: 1.5rem;
+  color: #D4AF37;
+}
+
+.easter-egg-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  color: #D4AF37;
+  font-size: 1.2rem;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  max-width: 90%;
+  font-style: italic;
+}
+
+.footer-sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #D4AF37;
+  border-radius: 50%;
+  z-index: 5;
+  pointer-events: none;
+  animation: footerSparkleAnimation 1s forwards;
+}
+
+@keyframes footerSparkleAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .signatures {
+    gap: 1rem;
+  }
+  
+  .signature {
+    font-size: 0.9rem;
+  }
+  
+  .easter-egg-message {
+    font-size: 1.1rem;
+    padding: 1.25rem 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .signatures {
+    gap: 0.75rem;
+  }
+  
+  .signature {
+    font-size: 0.8rem;
+  }
+  
+  .hidden-icon {
+    font-size: 1.2rem;
+  }
+  
+  .easter-egg-message {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}

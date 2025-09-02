@@ -1,0 +1,100 @@
+.easter-eggs-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.easter-egg {
+  position: absolute;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.easter-egg:hover {
+  transform: scale(1.2);
+}
+
+.owl {
+  top: 20%;
+  right: 10%;
+}
+
+.wand {
+  bottom: 30%;
+  left: 15%;
+}
+
+.potion {
+  top: 60%;
+  right: 20%;
+}
+
+.easter-egg-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  color: #D4AF37;
+  font-size: 1.2rem;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.sparkle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #D4AF37;
+  border-radius: 50%;
+  z-index: 999;
+  pointer-events: none;
+  animation: sparkleAnimation 1s forwards;
+}
+
+@keyframes sparkleAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .easter-egg {
+    font-size: 2rem;
+  }
+  
+  .owl {
+    right: 5%;
+  }
+  
+  .wand {
+    left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .easter-egg {
+    font-size: 1.8rem;
+  }
+  
+  .easter-egg-message {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

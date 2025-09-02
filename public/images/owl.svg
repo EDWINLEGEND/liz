@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Owl Body -->
+  <ellipse cx="50" cy="55" rx="30" ry="35" fill="#D4AF37" />
+  
+  <!-- Owl Head -->
+  <circle cx="50" cy="30" r="20" fill="#D4AF37" />
+  
+  <!-- Owl Eyes -->
+  <circle cx="40" cy="25" r="6" fill="white" />
+  <circle cx="60" cy="25" r="6" fill="white" />
+  <circle cx="40" cy="25" r="3" fill="black" />
+  <circle cx="60" cy="25" r="3" fill="black" />
+  
+  <!-- Owl Beak -->
+  <path d="M45,35 L55,35 L50,42 Z" fill="#FFD800" />
+  
+  <!-- Owl Wings -->
+  <path d="M20,55 Q35,40 20,25" fill="none" stroke="#D4AF37" stroke-width="5" />
+  <path d="M80,55 Q65,40 80,25" fill="none" stroke="#D4AF37" stroke-width="5" />
+  
+  <!-- Owl Feet -->
+  <path d="M40,90 L40,80 L45,80" fill="none" stroke="#FFD800" stroke-width="3" />
+  <path d="M60,90 L60,80 L55,80" fill="none" stroke="#FFD800" stroke-width="3" />
+</svg>

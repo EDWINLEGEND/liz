@@ -1,0 +1,118 @@
+.code-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  padding: 1rem;
+}
+
+.code-input-box {
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.code-input-box:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.code-input-title {
+  color: #D4AF37;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.code-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.code-input:focus {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  border-color: #FFD800;
+}
+
+.code-input.error {
+  border-color: #740001;
+  box-shadow: 0 0 10px rgba(116, 0, 1, 0.5);
+}
+
+.submit-button {
+  background-color: #D4AF37;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.submit-button:hover {
+  background-color: #FFD800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+  color: #740001;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .code-input-box {
+    padding: 1.5rem;
+  }
+  
+  .code-input-title {
+    font-size: 1.3rem;
+  }
+}

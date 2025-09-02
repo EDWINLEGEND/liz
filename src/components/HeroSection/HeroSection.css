@@ -1,0 +1,199 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/hogwarts-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  opacity: 0.9;
+  transform: translateZ(-10px) scale(2);
+}
+
+.parallax-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: -1;
+}
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 100px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.countdown-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #D4AF37;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.age-clock {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #D4AF37;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.age-clock:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+.age-display {
+  text-align: center;
+}
+
+.age-value {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.age-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .countdown-item {
+    min-width: 80px;
+    padding: 0.75rem;
+  }
+  
+  .countdown-value {
+    font-size: 2rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+  
+  .age-clock {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .age-value {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .countdown-container {
+    gap: 0.5rem;
+  }
+  
+  .countdown-item {
+    min-width: 70px;
+    padding: 0.5rem;
+  }
+  
+  .countdown-value {
+    font-size: 1.5rem;
+  }
+  
+  .age-clock {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .age-value {
+    font-size: 2.5rem;
+  }
+}
