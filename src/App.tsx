@@ -13,9 +13,8 @@ import Footer from './components/Footer/Footer';
 
 // Sample data - replace with actual data
 const CORRECT_CODE = 'alohomora'; // Secret code to unlock the site
-const FRIEND_NAME = 'Harry'; // Replace with your friend's name
-const BIRTHDAY_DATE = new Date('2025-07-31'); // Replace with actual birthday
-const AGE = 25; // Replace with actual age
+const FRIEND_NAME = 'Lisa'; // Person's name
+const BIRTHDAY_DATE = new Date('2004-09-02'); // Lisa's birthdate
 
 // Sample memories - replace with actual images and captions
 const memories = [
@@ -33,10 +32,10 @@ const memories = [
 const letters = [
   { id: 1, from: 'Ant', message: "Happy birthday lisa . I remember that we met unexpectedly at a canteen dinner through other people and now you are one of the most valuable people in my college life . I guess that's how it is , most unexpected people turn out to be close ones in a point of your life , that's how you are for me and I would love and hope to keep it that way always even though I know we aren't that close but hope to be. Once again happy birthday. PS : this is my first time writing a birthday letter so adjust" },
   { id: 2, from: 'San', message: "Wishing you a birthday filled with all the magic and wonder you bring to our lives!" },
-  { id: 3, from: 'Uthu', message: "Happy birthday! Hope yer day is as special as you are!" },
+  { id: 3, from: 'Uthu', message: "happy birthday to my pretty girl. ur so crazy and fun, I love living life with u though  u throw me into this existential spiral at times(much-needed). when I met u, it felt like we were meant to be, like finding a missing puzzle piece. i just knew youd be my best friend. and im so glad u exist. just know that no matter how old u get, ull always be my pet creature, ill always be there for u. also hoping we execute crazier plans this year. proudly, ur owner" },
   { id: 4, from: 'Gau', message: "Happieeeeee Booooooorthadayy to you Leeeeeeesaaaaaah! WHEEEEEEEEEEEE" },
   { id: 6, from: 'Air', message: "Happy Birthday lisa my partner in weirdness. You make my life 100 times more fun when ur around .I really hope u stay this chaotic ,weird ,creature like ,nd just YOU. Cuz normal is boring . Really happy to hv a frnd like you who laughs at the most dumbest things with me nd make me feel involved in madness."  },
-  { id: 5, from: 'Ed', message: "You'll always be the chosen one to me. Happy birthday!",isHidden: true },
+  { id: 5, from: 'Ed', message: "Yo,IDK what to say but happy bday",isHidden: true },
 ];
 
 // Sample signatures for footer
@@ -82,7 +81,7 @@ function App() {
         <CodeInput correctCode={CORRECT_CODE} onUnlock={handleUnlock} />
       ) : (
         <>
-          <HeroSection birthdayDate={BIRTHDAY_DATE} age={AGE} />
+          <HeroSection birthdayDate={BIRTHDAY_DATE} age={0} />
           
           <HappyBirthday name={FRIEND_NAME} />
           

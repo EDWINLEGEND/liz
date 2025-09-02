@@ -10,15 +10,21 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ birthdayDate, age }) => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const calculateAge = (birthDate: Date) => {
+    const today = new Date();
+    let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      calculatedAge--;
+    }
+    
+    return calculatedAge;
+  };
+
+  const [currentAge, setCurrentAge] = useState(calculateAge(birthdayDate));
 
   const particlesInit = async (engine: any) => {
-    // Using loadFull without checkVersion for tsparticles v3 compatibility
     await loadFull(engine);
   };
 
@@ -31,41 +37,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({ birthdayDate, age }) => {
       ease: 'power3.out' 
     });
     
-    gsap.from('.countdown-container', { 
-      opacity: 0, 
-      y: 30, 
-      duration: 1.5, 
-      delay: 0.5, 
-      ease: 'power3.out' 
-    });
-    
     gsap.from('.age-clock', { 
       opacity: 0, 
       scale: 0.8, 
       duration: 1.5, 
-      delay: 1, 
+      delay: 0.5, 
       ease: 'elastic.out(1, 0.5)' 
     });
 
-    // Calculate time left
-    const calculateTimeLeft = () => {
-      const difference = +birthdayDate - +new Date();
-      
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        });
+    // Update age if needed
+    const checkAgeUpdate = () => {
+      const newAge = calculateAge(birthdayDate);
+      if (newAge !== currentAge) {
+        setCurrentAge(newAge);
       }
     };
-
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
-
+    
+    const timer = setInterval(checkAgeUpdate, 1000 * 60 * 60 * 24); // Check daily
     return () => clearInterval(timer);
-  }, [birthdayDate]);
+  }, [birthdayDate, currentAge]);
 
   return (
     <div className="hero-section">
@@ -130,30 +120,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ birthdayDate, age }) => {
       />
       
       <div className="hero-content">
-        <h1 className="hero-title">Magical Birthday Countdown</h1>
-        
-        <div className="countdown-container">
-          <div className="countdown-item">
-            <span className="countdown-value">{timeLeft.days}</span>
-            <span className="countdown-label">Days</span>
-          </div>
-          <div className="countdown-item">
-            <span className="countdown-value">{timeLeft.hours}</span>
-            <span className="countdown-label">Hours</span>
-          </div>
-          <div className="countdown-item">
-            <span className="countdown-value">{timeLeft.minutes}</span>
-            <span className="countdown-label">Minutes</span>
-          </div>
-          <div className="countdown-item">
-            <span className="countdown-value">{timeLeft.seconds}</span>
-            <span className="countdown-label">Seconds</span>
-          </div>
-        </div>
+        <h1 className="hero-title">Happy Birthday Lisa!</h1>
         
         <div className="age-clock">
           <div className="age-display">
-            <span className="age-value">{age}</span>
+            <span className="age-value">{currentAge}</span>
             <span className="age-label">Magical Years</span>
           </div>
         </div>

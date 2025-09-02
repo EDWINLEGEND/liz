@@ -2,29 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import './AudioPlayer.css';
 
 const AudioPlayer: React.FC = () => {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   
   useEffect(() => {
-    const handleFirstInteraction = () => {
-      if (audioRef.current && isMuted) {
-        // Unmute and play on first user interaction
-        setIsMuted(false);
-        audioRef.current.play().catch(error => {
-          console.error('Audio playback failed:', error);
-        });
-      }
-      // Remove the event listener after first interaction
-      document.removeEventListener('click', handleFirstInteraction);
-    };
-    
-    // Add event listener for first interaction
-    document.addEventListener('click', handleFirstInteraction);
-    
-    return () => {
-      document.removeEventListener('click', handleFirstInteraction);
-    };
-  }, [isMuted]);
+    if (audioRef.current) {
+      audioRef.current.play().catch(error => {
+        console.error('Audio playback failed:', error);
+      });
+    }
+  }, []);
   
   const toggleMute = () => {
     if (audioRef.current) {
@@ -43,7 +30,7 @@ const AudioPlayer: React.FC = () => {
     <div className="audio-player">
       <audio
         ref={audioRef}
-        src="https://soundcloud.com/harrypotter-music/harry-potter-theme-song"
+        src="/audio/harry_potter_theme.mp3"
         loop
         muted={isMuted}
       />
