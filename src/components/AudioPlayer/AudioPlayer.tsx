@@ -3,13 +3,12 @@ import './AudioPlayer.css';
 
 const AudioPlayer: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.play().catch(error => {
-        console.error('Audio playback failed:', error);
-      });
+      audioRef.current.play().catch(e => console.error('Audio play failed:', e));
     }
   }, []);
   
